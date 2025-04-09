@@ -25,7 +25,7 @@ Un compte email SMTP (Gmail) pour l’envoi d’emails
 Installation
 1. Cloner le dépôt
 bash
-git clone https://github.com/votre-nom/auth-project.git
+git clone https://github.com/Khalid0306/auth-project.git
 cd auth-project
 
 2. Installer les dépendances
