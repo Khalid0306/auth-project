@@ -1,0 +1,19 @@
+services:
+  app:
+    build: .
+    container_name: app
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./data:/app/data
+      - ./logs:/app/logs
+    environment:
+      - PORT=3000
+      - NODE_ENV=dev
+      - JWT_SECRET=jgcvsjhdvsdvkvdskvd
+      - EMAIL_HOST=smtp.gmail.com
+      - EMAIL_PORT=465
+      - EMAIL_SECURE=true
+      - EMAIL_USER=votre_email@gmail.com
+      - EMAIL_PASSWORD=votre_mot_de_passe_app
+      - APP_URL=http://localhost:3000

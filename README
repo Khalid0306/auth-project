@@ -1,0 +1,78 @@
+Système d'Authentification Web
+Un système d'authentification web complet basé sur Node.js, Express, SQLite et Docker.
+Ce projet inclut l'inscription, la connexion, l'authentification à deux facteurs, la gestion des mots de passe oubliés, et une journalisation complète des actions.
+
+Fonctionnalités
+Inscription et connexion sécurisées
+
+Authentification à deux facteurs (A2F) par email
+
+Réinitialisation de mot de passe
+
+Protection contre les attaques (injections SQL, XSS)
+
+Journalisation des actions utilisateur
+
+Conteneurisation avec Docker
+
+✅ Prérequis
+Node.js (v14 ou supérieur)
+
+npm
+
+Un compte email SMTP (Gmail) pour l’envoi d’emails
+
+Installation
+1. Cloner le dépôt
+bash
+git clone https://github.com/votre-nom/auth-project.git
+cd auth-project
+
+2. Installer les dépendances
+bash
+npm install
+
+3. Créer un fichier .env à la racine du projet
+
+PORT=3000
+NODE_ENV=development
+JWT_SECRET=votre_secret_jwt_securise
+
+EMAIL_HOST=smtp.gmail.com
+EMAIL_PORT=587
+EMAIL_SECURE=false
+EMAIL_USER=votre_email@gmail.com
+EMAIL_PASSWORD=votre_mot_de_passe_app
+
+APP_URL=http://localhost:3000
+
+4. Démarrer l'application
+bash
+npm start
+
+✅ Important : Créez les dossiers logs/ et data/ à la racine du projet :
+
+bash
+mkdir logs data
+
+Base de données
+Le projet utilise SQLite avec les tables suivantes :
+
+users : informations des utilisateurs
+
+sessions : gestion des sessions actives
+
+verification_codes : codes A2F & tokens de réinitialisation
+
+logs : journalisation des actions
+
+Journalisation
+Les actions utilisateurs sont enregistrées de deux manières :
+
+Fichiers via Winston :
+
+logs/combined.log
+
+logs/error.log
+
+Base de données : via la table logs
