@@ -41,4 +41,10 @@ router.get('/login', (req, res) => {
 });
 
 
+router.post('/register', authController.register);
+router.post('/login', authController.login);
+router.post('/verify-code', authController.verifyCode);
+router.post('/forgot-password', authController.forgotPassword);
+router.post('/reset-password', authController.resetPassword);
+
 module.exports = router;

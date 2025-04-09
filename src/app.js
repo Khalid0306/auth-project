@@ -21,7 +21,7 @@ app.use(helmet({
       styleSrc: ["'self'", "'unsafe-inline'"],
     },
   }
-}));
+}))
 
 // Configuration CORS
 app.use(cors({
